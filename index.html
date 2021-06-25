@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://materializecss.com/css/ghpages-materialize.css" type="text/css" rel="stylesheet"
+        media="screen,projection">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Contact Manager</title>
+    <style>
+        body {
+            background: #18183c;
+        }
+
+        .progress {
+            display: none;
+        }
+        .alert {
+            margin: -15px auto 10px auto;
+            text-decoration: none;
+            color: #fff;
+            text-align: center;
+            letter-spacing: .5px;
+            -webkit-transition: background-color .2s ease-out;
+            transition: background-color .2s ease-out;
+            cursor: pointer;
+            border: none;
+            border-radius: 2px;
+            display: block;
+            height: 40px;
+            line-height: 36px;
+            width:fit-content;
+            padding: 0 16px;
+            text-transform: uppercase;
+            -webkit-tap-highlight-color: transparent;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+        }
+
+        .alert-danger {
+            background-color: #ef5350;
+        }
+
+        .alert-warning {
+            background-color: #ff9800;
+        }
+
+        .alert-info {
+            background-color: #26a69a;
+        }
+
+        .alert-success {
+            background-color: #24cc0d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col s12 m8 l6 center-align offset-m2 offset-l3">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title ">NEW CONTACT</span>
+                    <div class="row">
+                        <form id="contact-form" autocomplete="off">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input type="text" name="name" id="name">
+                                <label for="name">Full Name</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input type="email" name="email" id="email">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">phone</i>
+                                <input type="text" name="phone" id="phone">
+                                <label for="phone">Phone</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">event_note</i>
+                                <input type="text" class="datepicker" id="birthday">
+                                <label for="birthday">Birthday</label>
+                            </div>
+                            <button class="btn waves-effect waves-light btn-large" type="submit" name="action">ADD NEW
+                                CONTACT
+                                <i class="material-icons right">add</i>
+                            </button>
+                        </form>
+
+                    </div>
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <h5 id="task-title">CONTACT LIST</h5>
+                    <div class="input-field col s12">
+                        <input type="text" name="search" id="search">
+                        <label for="search">Search By Name</label>
+                    </div>
+                    <table class="stripe">
+                        <thead class="teal lighten-2 white-text">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Birthday</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="contact-list" class="pink lighten-5">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="app.js"></script> -->
+    <script src="app-es6.js"></script>
+</body>
+
+</html>
